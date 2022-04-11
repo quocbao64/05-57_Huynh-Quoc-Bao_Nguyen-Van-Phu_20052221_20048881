@@ -4,65 +4,117 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <style>
-            * {
-                padding: 0;
-                margin: auto;
-            }
-            .wrapper {
-                width: 1089px;
-                height: 700px;
-                background-color: blue;
-            }
-            header {
-                height: 150px;
-                background-color: violet;
-            }
-            menu {
-                height: 50px;
-                background-color: rgb(49, 182, 89);
-            }
-            .content {
-                height: 400px;
-                width: 1089px;
-                background-color: brown;
-            }
-            aside {
-                height: 100%;
-                width: 30%;
-                background-color: rgb(52, 202, 165);
-                float: left;
-            }
-            section,
-            section1 {
-                height: 100%;
-                width: 35%;
-                float: left;
-            }
-            section {
-                background-color: rgb(190, 88, 29);
-            }
-            section1 {
-                background-color: rgb(41, 64, 196);
-            }
-            footer {
-                height: 100px;
-                width: 100%;
-                background-color: aqua;
-            }
-        </style>
+        <!-- import bootstrap 5 -->
+        <link
+            rel="stylesheet"
+            href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        />
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <!-- import jquery -->
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <!-- import ion icon  -->
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+        <!-- import slick slider  -->
+        <link
+            rel="stylesheet"
+            href="../node_modules/slick-carousel/slick/slick.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../node_modules/slick-carousel/slick/slick-theme.css"
+        />
+        <script src="../node_modules/slick-carousel/slick/slick.min.js"></script>
+
+        <link rel="stylesheet" href="../css/index.css" />
+
+        <script>
+            $(function () {
+                $(".header").load("./header.html");
+            });
+            $(function () {
+                $(".footer").load("../html/footer.html");
+            });
+        </script>
     </head>
     <body>
-        <div class="wrapper">
-            <header>header</header>
-            <menu>menu</menu>
-            <div class="content">
-                <aside>aside</aside>
-                <section>section</section>
-                <section1>section1</section1>
+        <div class="header"></div>
+
+        <div class="container">
+            <div class="nav-scroller">
+                <nav
+                    class="section-category nav d-flex justify-content-between"
+                >
+                    <a href="" class="p-2 text-decoration-none border-1"
+                        >Thời trang bé gái</a
+                    >
+                    <a href="" class="p-2 text-decoration-none border-1"
+                        >Đầm váy bé gái</a
+                    >
+                    <a href="" class="p-2 text-decoration-none border-1"
+                        >Đồ bộ bé gái</a
+                    >
+                    <a href="" class="p-2 text-decoration-none border-1"
+                        >Áo, áo khoác bé gái</a
+                    >
+                    <a href="" class="p-2 text-decoration-none border-1"
+                        >Quần bé gái</a
+                    >
+                    <a href="" class="p-2 text-decoration-none border-1"
+                        >Thời trang bé trai</a
+                    >
+                    <a href="" class="p-2 text-decoration-none border-1"
+                        >Đồ bộ bé trai</a
+                    >
+                    <a href="" class="p-2 text-decoration-none border-1"
+                        >Áo, áo khoác bé trai</a
+                    >
+                    <a href="" class="p-2 text-decoration-none border-1"
+                        >Quần bé trai</a
+                    >
+                </nav>
             </div>
-            <footer>footer</footer>
+            <div class="section-banner"></div>
+            <div class="section-hot-items row">
+                <div class="heading-bar top-week">SẢN PHẨM NỔI BẬT</div>
+                <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                    <div id="shop-products"></div>
+                </div>
+            </div>
         </div>
+        <div class="footer"></div>
+        <script type="module" src="../js/index.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#shop-products").slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    infinite: true,
+                    responsive: [
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 3,
+                            },
+                        },
+                        {
+                            breakpoint: 576,
+                            settings: {
+                                slidesToShow: 2,
+                            },
+                        },
+                    ],
+                });
+            });
+        </script>
     </body>
 </html>
