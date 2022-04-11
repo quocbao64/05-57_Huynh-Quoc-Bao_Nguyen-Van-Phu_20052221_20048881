@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- import bootstrap 5 -->
+        <link
+            rel="stylesheet"
+            href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        />
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <!-- import jquery -->
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+        <script>
+            $(function () {
+                $(".header").load("../html/header.html");
+            });
+            $(function () {
+                $(".footer").load("../html/footer.html");
+            });
+        </script>
+
+        <link rel="stylesheet" href="../css/login.css" />
+    </head>
+    <body>
+        <div class="header"></div>
+        <div class="container mt-5 align-items-center">
+            <main class="login">
+                <div class="col-md-6">
+                    <form class="text-center" id="loginForm">
+                        <img class="mb-4" src="../image/KIDSVN.png" alt="" />
+                        <h1 class="h3 mb-3 fw-normal">Đăng nhập</h1>
+                        <div class="form-floating mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="floatingPhone"
+                                name="floatingPhone"
+                                placeholder="Số điện thoại"
+                            />
+                            <label for="floatingPhone">Số điện thoại</label>
+                            <div class="error"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="floatingPassword"
+                                name="flodatingPasswor"
+                                placeholder="Mật khẩu"
+                            />
+                            <label for="floatingPassword">Mật khẩu</label>
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="checkbox mb-3 text-start">
+                            <label>
+                                <input type="checkbox" value="remember-me" />
+                                Nhớ tài khoản
+                            </label>
+                        </div>
+                        <button
+                            class="w-100 btn btn-lg btn-primary"
+                            id="btnLogin"
+                        >
+                            Đăng nhập
+                        </button>
+                    </form>
+                </div>
+            </main>
+        </div>
+        <div class="footer"></div>
+    </body>
+    <script src="../js/login.js"></script>
+</html>
