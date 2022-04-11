@@ -1,3 +1,7 @@
+.container {
+    margin-top: 80px !important;
+}
+
 .register .error {
     text-align: start;
     color: red;
