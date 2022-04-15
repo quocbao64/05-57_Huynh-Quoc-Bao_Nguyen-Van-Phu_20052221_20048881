@@ -13,6 +13,11 @@
     margin-bottom: 20px;
 }
 
+.detail-slide-item {
+    display: flex;
+    justify-content: center;
+}
+
 .detail-slider-nav {
     display: flex;
 }
@@ -213,4 +218,13 @@
 .toast {
     background-color: rgb(8, 169, 8) !important;
     color: white !important;
+}
+
+.modal-dialog {
+    max-width: 550px !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border: none !important;
 }

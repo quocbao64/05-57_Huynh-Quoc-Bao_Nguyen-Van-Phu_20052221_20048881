@@ -27,7 +27,7 @@ const renderIsLogin = () => {
                 </ul>
             </div>
             `;
-    if (localStorage.getItem("phone")) {
+    if (sessionStorage.getItem("phone")) {
         replaceTargetWith("header-btn-group", html);
     }
 };
@@ -60,8 +60,8 @@ const openMenu = (e) => {
 };
 
 const logout = () => {
-    localStorage.removeItem("phone");
-    localStorage.removeItem("password");
+    sessionStorage.removeItem("phone");
+    sessionStorage.removeItem("password");
     const dropdown = classes("dropdown");
     if (dropdown[0]) {
         replaceTargetWith(
@@ -88,6 +88,7 @@ const logout = () => {
             `
         );
     }
+    location.reload();
 };
 
 window.onload = renderIsLogin();
