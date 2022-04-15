@@ -9,11 +9,13 @@ const repassword = id("floatingRePassword");
 
 const errorMsg = classes("error");
 
-const regPhone = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+const regPhone = /((09|03|07|08|05)+([0-9]{8})\b)/;
 const regPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
 const validate = (e) => {
     e.preventDefault();
+
+    let check = 0;
 
     // validate phone
     if (phone.value === "") {
@@ -22,15 +24,22 @@ const validate = (e) => {
         handleError(phone, 0, "Số điện thoại sai định dạng", "red");
     } else {
         handleError(phone, 0, "", "green");
+        check++;
     }
 
     // validate password
     if (password.value === "") {
         handleError(password, 1, "Mật khẩu không được để trống", "red");
     } else if (!regPassword.test(password.value)) {
-        handleError(password, 1, "Mật khẩu sai định dạng", "red");
+        handleError(
+            password,
+            1,
+            "Mật khẩu phải có ít nhất 8 ký tự gồm chữ và số",
+            "red"
+        );
     } else {
-        handleError(password, 0, "", "green");
+        handleError(password, 1, "", "green");
+        check++;
     }
 
     // validate re-password
@@ -44,7 +53,14 @@ const validate = (e) => {
     } else if (password.value !== repassword.value) {
         handleError(repassword, 2, "Mật khẩu nhập lại không đúng", "red");
     } else {
-        handleError(password, 0, "", "green");
+        handleError(repassword, 2, "", "green");
+        check++;
+    }
+
+    if (check === 3) {
+        localStorage.setItem("phone", phone.value);
+        localStorage.setItem("password", password.value);
+        window.location.replace("../html/login.html");
     }
 };
 
@@ -53,7 +69,9 @@ let handleError = (id, serial, message, color) => {
     id.style.border = `1px solid ${color}`;
 };
 
-btnLogin.addEventListener("click", validate);
+btnLogin.addEventListener("click", function () {
+    validate(event);
+});
 
 phone.addEventListener("focus", () => {
     handleError(phone, 0, "", "");

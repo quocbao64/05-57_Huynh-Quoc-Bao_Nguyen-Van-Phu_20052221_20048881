@@ -1,5 +1,6 @@
 .navbar {
     background-color: var(--background-color);
+    height: 60px;
 }
 
 .header-logo {
@@ -26,14 +27,66 @@
     background-color: var(--light-color);
 }
 
-.header-btn-group .btn-login a {
+.header-btn-group .btn-login {
     color: var(--text-color);
 }
 
 .header-btn-group .btn-register {
     background-color: var(--primary-color);
+    color: var(--light-color);
 }
 
-.header-btn-group .btn-register a {
+.header-btn-group .btn-register:hover {
     color: var(--light-color);
+}
+
+.header-avatar {
+    font-size: 30px;
+    transform: translateX(-65px);
+    cursor: pointer;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+}
+
+#dropdown-menu {
+    transform: translate(-130px, 50px);
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.ping {
+    width: 18px;
+    height: 18px;
+    background: var(--primary-color);
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.ping:not(.active) {
+    display: none;
 }

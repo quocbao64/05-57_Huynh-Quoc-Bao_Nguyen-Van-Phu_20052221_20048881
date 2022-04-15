@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- import bootstrap 5 -->
+        <link
+            rel="stylesheet"
+            href="../assets/bootstrap-5.1.3-dist/css/bootstrap.min.css"
+        />
+        <script src="../assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
+        <!-- import jquery -->
+        <script src="../assets/jquery/jquery-3.6.0.js"></script>
+        <!-- import ion icon  -->
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+
+        <link rel="stylesheet" href="../css/index.css" />
+        <link rel="stylesheet" href="../css/cart.css" />
+
+        <script>
+            $(function () {
+                $(".header").load("../html/header.html");
+            });
+            $(function () {
+                $(".footer").load("../html/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header"></div>
+        <div class="container">
+            <main>
+                <div class="py-5 text-center">
+                    <h2>Giỏ hàng của bạn</h2>
+                </div>
+
+                <div class="row g-5">
+                    <div class="col-md-7 col-lg-6 order-md-last">
+                        <h4
+                            class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                            <span class="text-black">Hàng của bạn</span>
+                            <span class="badge bg-black rounded-pill">2</span>
+                        </h4>
+                        <ul class="list-group mb-3 list-unstyled">
+                            <li>
+                                <div class="shop-product">
+                                    <div class="shop-product__img-wrapper">
+                                        <img
+                                            src="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26108b751e24e-500x500.jpg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div class="shop-product__content">
+                                        <div class="shop-product__name">
+                                            Bộ thun Genax và quần túi kiểu cho
+                                            bé trai
+                                        </div>
+                                        <div class="shop-product__price">
+                                            270.000đ
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="shop-product">
+                                    <div class="shop-product__img-wrapper">
+                                        <img
+                                            src="//cdn.becungshop.vn/images/500x500/ao-khoac-kitty-cham-bi-trai-tim-cho-be-gai-tu-1-8-tuoi-p233521885ca0f-500x500.jpg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div class="shop-product__content">
+                                        <div class="shop-product__name">
+                                            Áo khoác kitty chấm bi trái tim cho
+                                            bé gái từ 1-8 tuổi
+                                        </div>
+                                        <div class="shop-product__price">
+                                            89.000đ
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li
+                                class="list-group-item d-flex justify-content-between"
+                            >
+                                <span>Total (VND)</span>
+                                <strong>359.000đ</strong>
+                            </li>
+                        </ul>
+
+                        <form class="card p-2">
+                            <div class="input-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Mã giảm giá"
+                                />
+                                <button type="submit" class="btn btn-secondary">
+                                    Nhận mã
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5 col-lg-6">
+                        <h4 class="mb-3">Địa chỉ nhận hàng</h4>
+                        <form class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-sm-12">
+                                    <label for="firstName" class="form-label"
+                                        >Họ và tên</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="firstName"
+                                        placeholder=""
+                                        value=""
+                                        required
+                                    />
+                                    <div class="invalid-feedback">
+                                        Họ và tên không được để trống
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="address" class="form-label"
+                                        >Địa chỉ</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="address"
+                                        placeholder=""
+                                        required
+                                    />
+                                    <div class="invalid-feedback">
+                                        Vui lòng điền địa chỉ
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <label for="country" class="form-label"
+                                        >Thành phố</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="country"
+                                        required
+                                    >
+                                        <option value="">Chọn...</option>
+                                        <option>Hồ Chí Minh</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Vui lòng chọn thành phố
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4" />
+
+                            <button
+                                class="w-100 btn btn-primary btn-lg"
+                                type="submit"
+                            >
+                                Thanh toán
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div class="footer"></div>
+    </body>
+</html>

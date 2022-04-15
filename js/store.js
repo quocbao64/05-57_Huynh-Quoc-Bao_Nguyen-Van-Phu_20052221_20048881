@@ -24,18 +24,21 @@ const shopProducts = id("shop-products");
 
 const formatPrice = (price) => new Intl.NumberFormat().format(price);
 
-shopProducts.innerHTML = products
-    .map(
-        (e) =>
-            `
+if (window.location.href.indexOf("store.html") !== -1) {
+    shopProducts.innerHTML = products
+        .map(
+            (e, id) =>
+                `
         <div class="shop-product">
-            <div class="shop-product__img-wrapper">
-                <img src="${e.image[0]}" alt="" />
-            </div>
-            <div class="shop-product__content">
-                <div class="shop-product__name">${e.title}</div>
-                <p class="shop-product__description"></p>
-            </div>
+            <a href="../html/article-detail.html">
+                <div class="shop-product__img-wrapper">
+                    <img src="${e.image[0]}" alt="" />
+                </div>
+                <div class="shop-product__content">
+                    <div class="shop-product__name">${e.title}</div>
+                    <p class="shop-product__description"></p>
+                </div>
+            </a>
             <div class="shop-product__row">
                 <div class="shop-product__rating d-flex">
                     <div
@@ -55,13 +58,17 @@ shopProducts.innerHTML = products
             </div>
             <div class="shop-product__btns">
                 <div class="shop-product__btn">
-                    <ion-icon name="heart-outline"></ion-icon>
+                    <ion-icon 
+                        class="heart-icon" 
+                        name="heart-outline" 
+                    ></ion-icon>
                 </div>
                 <div class="shop-product__btn">
-                    <ion-icon name="cart-outline"></ion-icon>
+                    <ion-icon class="cart-icon" name="cart-outline"></ion-icon>
                 </div>
-            </div>
+            </div>            
         </div>
         `
-    )
-    .join("");
+        )
+        .join("");
+}

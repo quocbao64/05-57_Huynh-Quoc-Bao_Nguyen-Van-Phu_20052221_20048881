@@ -14,12 +14,15 @@ const regPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 const validate = (e) => {
     e.preventDefault();
 
+    let check = 0;
+
     if (phone.value === "") {
         handleError(phone, 0, "Số điện thoại không được để trống", "red");
     } else if (!regPhone.test(phone.value)) {
         handleError(phone, 0, "Số điện thoại sai định dạng", "red");
     } else {
         handleError(phone, 0, "", "green");
+        check++;
     }
 
     if (password.value === "") {
@@ -28,6 +31,25 @@ const validate = (e) => {
         handleError(password, 1, "Mật khẩu sai định dạng", "red");
     } else {
         handleError(password, 0, "", "green");
+        check++;
+    }
+
+    if (check === 2) {
+        if (localStorage.getItem("phone") !== phone.value) {
+            handleError(phone, 0, "Số điện thoại không đúng", "red");
+            return false;
+        } else {
+            handleError(phone, 0, "", "green");
+        }
+
+        if (localStorage.getItem("password") !== password.value) {
+            handleError(password, 1, "Mật khẩu không đúng", "red");
+            return false;
+        } else {
+            handleError(password, 1, "", "green");
+        }
+        sessionStorage.setItem("phone", phone.value);
+        window.location.replace("/index.html");
     }
 };
 
