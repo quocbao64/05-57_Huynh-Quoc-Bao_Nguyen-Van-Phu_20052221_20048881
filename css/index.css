@@ -49,6 +49,11 @@
     white-space: nowrap;
 }
 
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border: none !important;
+}
+
 .nav a {
     border-radius: 6px;
     transition: all 0.1s ease-out;
