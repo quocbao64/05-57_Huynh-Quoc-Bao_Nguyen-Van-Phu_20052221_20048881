@@ -16,7 +16,10 @@
             rel="stylesheet"
             href="../assets/simplePagination/simplePagination.css"
         />
-        <script src="../assets/simplePagination/jquery.simplePagination.js"></script>
+        <script
+            type="text/javascript"
+            src="../assets/simplePagination/jquery.simplePagination.js"
+        ></script>
         <!-- import ion icon  -->
         <script
             type="module"
@@ -47,63 +50,26 @@
             <div class="shop-filters col-md-3 col-lg-2">
                 <div class="shop-filters__title">Phổ biến</div>
                 <div class="shop-filters__list">
-                    <ul class="list-group">
-                        <li class="list-group-item shop-filters__item">
-                            <a href=""> Thời trang bé gái</a>
-                        </li>
-                        <li class="list-group-item shop-filters__item">
-                            <a href=""> Đầm váy bé gái</a>
-                        </li>
-                        <li class="list-group-item shop-filters__item">
-                            <a href=""> Đồ bộ bé gái</a>
-                        </li>
-                        <li class="list-group-item shop-filters__item">
-                            <a href=""> Áo, áo khoác bé gái</a>
-                        </li>
-                        <li class="list-group-item shop-filters__item">
-                            <a href=""> Thời trang bé trai</a>
-                        </li>
-                        <li class="list-group-item shop-filters__item">
-                            <a href=""> Đồ bộ bé trai</a>
-                        </li>
-                        <li class="list-group-item shop-filters__item">
-                            <a href=""> Áo, áo khoác bé trai</a>
-                        </li>
-                    </ul>
+                    <ul class="list-group"></ul>
                 </div>
             </div>
             <div class="shop-content col-md-9 col-lg-10">
                 <div class="shop-handle">
-                    <div class="shop-handle__label">
+                    <div class="shop-handle__label d-flex">
+                        <h4></h4>
+                        <h4 class="me-2 ms-2">&gt;</h4>
                         <h4>Trang 1</h4>
                     </div>
-                    <div class="shop-handle__drop">
-                        <div class="dropdown">
-                            <button
-                                class="btn dropdown-toggle"
-                                type="button"
-                                id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                Lọc
-                            </button>
-                            <ul
-                                class="dropdown-menu"
-                                aria-labelledby="dropdownMenuButton1"
-                            >
-                                <li>
-                                    <a class="dropdown-item" href="#"
-                                        >Giá thấp đến cao</a
-                                    >
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#"
-                                        >Giá cao đến thấp</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
+                    <div
+                        class="shop-handle__search col-12 col-lg-auto mb-3 mb-lg-0"
+                    >
+                        <input
+                            id="search-bar"
+                            type="search"
+                            class="form-control form-control-dark"
+                            placeholder="Tìm kiếm"
+                            aria-label="Search"
+                        />
                     </div>
                 </div>
                 <div id="shop-products"></div>
@@ -116,11 +82,17 @@
         </div>
         <div class="footer"></div>
         <script>
+            $(document).ready(function () {
+                $(".shop-filters__item")
+                    .first()
+                    .click(function () {
+                        location.reload();
+                    });
+            });
             $(async function () {
-                var items = await $("#shop-products .shop-product");
-                var numItems = items.length;
-                var perPage = 12;
-
+                items = await $("#shop-products .shop-product");
+                numItems = items.length;
+                perPage = 12;
                 items.slice(perPage).hide();
 
                 $("#light-pagination").pagination({
@@ -136,8 +108,13 @@
                         var showFrom = perPage * (pageNumber - 1);
                         var showTo = showFrom + perPage;
                         items.hide().slice(showFrom, showTo).show();
-                        $(".shop-handle__label h4").html("Trang " + pageNumber);
-                        window.scrollTo({ top: 0, behavior: "smooth" });
+                        $(".shop-handle__label h4:nth-child(3)").html(
+                            "Trang " + pageNumber
+                        );
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                        });
                     },
                 });
             });

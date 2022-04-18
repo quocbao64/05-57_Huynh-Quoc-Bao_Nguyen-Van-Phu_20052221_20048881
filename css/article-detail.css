@@ -7,6 +7,7 @@
 .slick-track {
     display: flex;
     width: 100%;
+    transform: none !important;
 }
 
 #detail-slides {
@@ -215,8 +216,12 @@
     color: #ff514e;
 }
 
-.toast {
+.toast-success {
     background-color: rgb(8, 169, 8) !important;
+    color: white !important;
+}
+.toast-error {
+    background-color: red !important;
     color: white !important;
 }
 

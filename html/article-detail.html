@@ -28,18 +28,6 @@
             href="../assets/slick-1.8.1/slick/slick-theme.css"
         />
         <script src="../assets/slick-1.8.1/slick/slick.min.js"></script>
-        <!-- import xzoom -->
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="../assets/xzoom/xzoom.min.css"
-            media="all"
-        />
-        <script
-            type="text/javascript"
-            src="../assets/xzoom/xzoom.min.js"
-        ></script>
-
         <!-- import toastr -->
         <link
             rel="stylesheet"
@@ -66,74 +54,21 @@
         <div class="header"></div>
         <div class="detail">
             <div class="detail__container">
-                <div class="row d-flex">
+                <div class="row d-flex" id="product-detail">
                     <div class="col-md-6">
                         <div class="detail-img">
-                            <div id="detail-slides">
-                                <div class="detail-slide-item">
-                                    <div>
-                                        <img
-                                            src="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26106c5bbe6aa-500x500.jpg"
-                                            alt="Slide 1"
-                                            class="img-fluid slide-img"
-                                            xoriginal="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26106c5bbe6aa-500x500.jpg"
-                                            xpreview="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26106c5bbe6aa-500x500.jpg"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="detail-slide-item">
-                                    <div>
-                                        <img
-                                            src="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26107ce574dd0-500x500.jpg"
-                                            alt="Slide 2"
-                                            class="img-fluid slide-img"
-                                            xoriginal="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26107ce574dd0-500x500.jpg"
-                                            xpreview="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26107ce574dd0-500x500.jpg"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="detail-slide-item">
-                                    <div>
-                                        <img
-                                            src="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26108b751e24e-500x500.jpg"
-                                            alt="Slide 3"
-                                            class="img-fluid slide-img"
-                                            xoriginal="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26108b751e24e-500x500.jpg"
-                                            xpreview="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26108b751e24e-500x500.jpg"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="detail-slider-nav">
-                                <div class="detail-slider-nav__img">
-                                    <img
-                                        src="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26106c5bbe6aa-500x500.jpg"
-                                        alt="Slide 1"
-                                        class="img-fluid"
-                                    />
-                                </div>
-                                <div class="detail-slider-nav__img">
-                                    <img
-                                        src="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26107ce574dd0-500x500.jpg"
-                                        alt="Slide 2"
-                                        class="img-fluid"
-                                    />
-                                </div>
-                                <div class="detail-slider-nav__img">
-                                    <img
-                                        src="//cdn.becungshop.vn/images/500x500/bo-thun-nguoi-di-bo-cho-be-trai-p26108b751e24e-500x500.jpg"
-                                        alt="Slide 3"
-                                        class="img-fluid"
-                                    />
-                                </div>
-                            </div>
+                            <div id="detail-slides"></div>
+                            <div id="detail-slider-nav"></div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="detail-content">
-                            <h2 class="detail-content__title">
-                                Bộ thun Genax và quần túi kiểu cho bé trai
-                            </h2>
+                            <input
+                                type="text"
+                                hidden="hidden"
+                                id="id-product"
+                            />
+                            <h2 class="detail-content__title"></h2>
                             <div class="detail-content__rate">
                                 <div
                                     class="detail-content__stars d-flex align-items-center pe-2"
@@ -148,7 +83,7 @@
                                     1233 lượt đánh giá
                                 </div>
                             </div>
-                            <div class="detail-content__price">270.000đ</div>
+                            <div class="detail-content__price"></div>
                             <div class="detail-content__size">
                                 <span>Chọn kích cỡ</span>
                                 <select
@@ -252,6 +187,7 @@
                             <span>Độ tuổi</span><span>10 tháng - 15 tuổi</span>
                         </li>
                         <li><span>Cân nặng</span><span>8kg - 40kg</span></li>
+                        <li><span>Số lượng trong kho</span><span>1</span></li>
                         <li><span>Chất liệu</span><span>cotton</span></li>
                         <li><span>Xuất xứ</span><span>Việt Nam</span></li>
                     </ul>
@@ -336,12 +272,6 @@
                     focusOnSelect: true,
                 });
             });
-            $.each($(".slide-img"), function () {
-                $(this).xzoom({
-                    lensCollision: true,
-                    xOffset: 5,
-                });
-            });
             $(document).ready(function () {
                 $(".shop-products").slick({
                     slidesToShow: 4,
@@ -378,6 +308,10 @@
 
                 $("#btn-add-cart").on("click", function () {
                     if (sessionStorage.getItem("phone")) {
+                        if ($("#quantity").val() > 1) {
+                            toastr.error("Không đủ số lượng hàng");
+                            return false;
+                        }
                         toastr.success("Thêm vào giỏ hàng thành công", "");
                     }
                 });

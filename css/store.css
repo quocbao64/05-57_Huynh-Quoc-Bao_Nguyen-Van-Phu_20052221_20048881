@@ -30,6 +30,7 @@ a {
 
 .shop-filters__item:hover {
     background-color: rgba(0, 0, 0, 0.08);
+    cursor: pointer;
 }
 
 .shop-filters__item a {

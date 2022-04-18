@@ -60,12 +60,8 @@
                         >
                     </li>
                     <li class="position-relative">
-                        <a
-                            href="../html/cart.html"
-                            class="nav-link px-2 text-black"
-                            >Giỏ hàng</a
-                        >
-                        <span class="ping">2</span>
+                        <a class="nav-link px-2 text-black cart">Giỏ hàng</a>
+                        <span class="ping"></span>
                     </li>
                     <li>
                         <a
@@ -101,6 +97,44 @@
             $(document).ready(function () {
                 if (sessionStorage.getItem("phone")) {
                     $(".ping").addClass("active");
+                    let cart = localStorage.getItem("cart");
+                    if (cart !== null) {
+                        $(".ping")
+                            .first()
+                            .html(findOccurrences(JSON.parse(cart)).length);
+                    }
+                }
+            });
+            $(".cart").on("click", function () {
+                if (sessionStorage.getItem("phone")) {
+                    window.location.assign("../html/cart.html");
+                } else {
+                    window.location.replace("./login.html");
+                }
+            });
+            const findOccurrences = (arr = []) => {
+                const res = [];
+                arr.forEach((el) => {
+                    const index = res.findIndex((obj) => {
+                        return obj["id"] === el;
+                    });
+                    if (index === -1) {
+                        res.push({
+                            id: el,
+                            count: 1,
+                        });
+                    } else {
+                        res[index]["count"]++;
+                    }
+                });
+                return res;
+            };
+            $(".cart-icon").click(function () {
+                let cart = localStorage.getItem("cart");
+                if (cart !== null) {
+                    $(".ping")
+                        .first()
+                        .html(findOccurrences(JSON.parse(cart)).length);
                 }
             });
         </script>
