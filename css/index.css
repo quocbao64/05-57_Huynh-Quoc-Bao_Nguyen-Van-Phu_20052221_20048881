@@ -132,3 +132,8 @@
     color: #fff;
     background-color: #ff514e;
 }
+
+a {
+    color: black !important;
+    text-decoration: none !important;
+}

@@ -228,3 +228,7 @@
     background-color: var(--primary-color) !important;
     border: none !important;
 }
+
+.img-fluid {
+    margin: 0 auto;
+}

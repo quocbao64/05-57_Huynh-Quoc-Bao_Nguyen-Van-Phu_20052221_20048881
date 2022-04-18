@@ -16,13 +16,15 @@ hotProducts.innerHTML = product
         (e) =>
             `
         <div class="shop-product">
-            <div class="shop-product__img-wrapper">
-                <img src="${e.image[0]}" alt="" />
-            </div>
-            <div class="shop-product__content">
-                <div class="shop-product__name">${e.title}</div>
-                <p class="shop-product__description"></p>
-            </div>
+            <a href="../html/article-detail.html">
+                <div class="shop-product__img-wrapper">
+                    <img src="${e.image[0]}" alt="" />
+                </div>
+                <div class="shop-product__content">
+                    <div class="shop-product__name">${e.title}</div>
+                    <p class="shop-product__description"></p>
+                </div>
+            </a>
             <div class="shop-product__row">
                 <div class="shop-product__rating d-flex">
                     <div
@@ -51,13 +53,15 @@ boyProducts.innerHTML = boy_product
         (e) =>
             `
         <div class="shop-product">
-            <div class="shop-product__img-wrapper">
-                <img src="${e.image[0]}" alt="" />
-            </div>
-            <div class="shop-product__content">
-                <div class="shop-product__name">${e.title}</div>
-                <p class="shop-product__description"></p>
-            </div>
+            <a href="../html/article-detail.html">
+                <div class="shop-product__img-wrapper">
+                    <img src="${e.image[0]}" alt="" />
+                </div>
+                <div class="shop-product__content">
+                    <div class="shop-product__name">${e.title}</div>
+                    <p class="shop-product__description"></p>
+                </div>
+            </a>
             <div class="shop-product__row">
                 <div class="shop-product__rating d-flex">
                     <div
@@ -86,13 +90,15 @@ girlProducts.innerHTML = girl_product
         (e) =>
             `
         <div class="shop-product">
-            <div class="shop-product__img-wrapper">
-                <img src="${e.image[0]}" alt="" />
-            </div>
-            <div class="shop-product__content">
-                <div class="shop-product__name">${e.title}</div>
-                <p class="shop-product__description"></p>
-            </div>
+            <a href="../html/article-detail.html">
+                <div class="shop-product__img-wrapper">
+                    <img src="${e.image[0]}" alt="" />
+                </div>
+                <div class="shop-product__content">
+                    <div class="shop-product__name">${e.title}</div>
+                    <p class="shop-product__description"></p>
+                </div>
+            </a>
             <div class="shop-product__row">
                 <div class="shop-product__rating d-flex">
                     <div
