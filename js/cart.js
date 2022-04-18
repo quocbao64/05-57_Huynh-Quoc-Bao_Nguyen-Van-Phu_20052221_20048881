@@ -64,16 +64,16 @@ const renderProduct = () => {
                     <div class="cart-product">
                         <div class="cart-product__img-wrapper">
                             <img
-                                src="${findProduct(e.id).image[0]}"
+                                src="${findProduct(e.id)?.image[0]}"
                                 alt=""
                             />
                         </div>
                         <div class="cart-product__content">
                             <div class="cart-product__name">
-                                ${findProduct(e.id).title}
+                                ${findProduct(e.id)?.title}
                             </div>
                             <div class="cart-product__price">Đơn giá: ${formatPrice(
-                                findProduct(e.id).price
+                                findProduct(e.id)?.price
                             )}đ</div>
                             <div class="cart-product__quantity">Số lượng: ${
                                 e.count
