@@ -143,10 +143,6 @@
             $(document).ready(function () {
                 if (sessionStorage.getItem("phone")) {
                     $(".badge").addClass("active");
-                    let cart = localStorage.getItem("cart");
-                    if (cart !== null) {
-                        $(".badge").first().html(JSON.parse(cart).length);
-                    }
                 }
             });
         </script>

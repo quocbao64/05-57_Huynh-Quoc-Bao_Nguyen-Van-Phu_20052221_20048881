@@ -92,6 +92,8 @@ const renderProduct = () => {
                 <strong>${formatPrice(sumTotal)}đ</strong>
             </li>
         `;
+
+    classes("badge")[0].innerHTML = findOccurrences(cartItem).length;
 };
 
 renderProduct();

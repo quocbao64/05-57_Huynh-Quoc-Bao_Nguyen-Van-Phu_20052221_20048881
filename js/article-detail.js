@@ -46,11 +46,11 @@ const findOccurrences = (arr = []) => {
     return res;
 };
 
+let cartItem = JSON.parse(localStorage.getItem("cart"));
 window.addToCart = (idx) => {
-    let cartItem = JSON.parse(localStorage.getItem("cart"));
     if (cartItem == null) cartItem = [];
     cartItem.push(idx);
-    localStorage.setItem("cart", JSON.stringify(findOccurrences(cartItem)));
+    localStorage.setItem("cart", JSON.stringify(cartItem));
 };
 
 const renderProduct = () => {
@@ -147,4 +147,5 @@ hotProducts.innerHTML = product1
 
 id("btn-add-cart").addEventListener("click", function () {
     addToCart(parseInt(id("id-product").value));
+    classes("ping")[0].innerHTML = findOccurrences(cartItem).length;
 });
