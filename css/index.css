@@ -137,3 +137,7 @@ a {
     color: black !important;
     text-decoration: none !important;
 }
+
+.form-control {
+    height: auto;
+}
