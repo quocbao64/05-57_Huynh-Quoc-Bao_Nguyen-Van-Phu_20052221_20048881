@@ -120,9 +120,13 @@
             });
             $(".cart").on("click", function () {
                 if (sessionStorage.getItem("phone")) {
-                    window.location.assign("../html/cart.html");
+                    window.location.assign(
+                        "../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/html/cart.html"
+                    );
                 } else {
-                    window.location.replace("./login.html");
+                    window.location.replace(
+                        "../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/html/login.html"
+                    );
                 }
             });
             const findOccurrences = (arr = []) => {
