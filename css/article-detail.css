@@ -10,6 +10,10 @@
     transform: none !important;
 }
 
+.slick-list {
+    display: flex;
+}
+
 #detail-slides {
     margin-bottom: 20px;
 }
