@@ -60,7 +60,9 @@ const validate = (e) => {
     if (check === 3) {
         localStorage.setItem("phone", phone.value);
         localStorage.setItem("password", password.value);
-        window.location.replace("../html/login.html");
+        window.location.replace(
+            "../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/html/login.html"
+        );
     }
 };
 

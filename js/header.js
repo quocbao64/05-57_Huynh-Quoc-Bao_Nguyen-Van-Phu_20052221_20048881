@@ -71,13 +71,13 @@ const logout = () => {
                     id="header-btn-group"
                     class="text-end header-btn-group d-flex justify-content-center"
                 >
-                    <a href="../html/login.html" class="text-decoration-none">
+                    <a href="../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/html/login.html" class="text-decoration-none">
                         <button type="button" class="btn btn-login me-2">
                             Đăng nhập
                         </button></a
                     >
                     <a
-                        href="../html/register.html"
+                        href="../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/html/register.html"
                         class="text-decoration-none"
                     >
                         <button type="button" class="btn btn-register">
