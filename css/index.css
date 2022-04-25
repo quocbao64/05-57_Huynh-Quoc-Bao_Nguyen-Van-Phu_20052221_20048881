@@ -139,5 +139,5 @@ a {
 }
 
 .form-control {
-    height: auto;
+    height: auto !important;
 }
