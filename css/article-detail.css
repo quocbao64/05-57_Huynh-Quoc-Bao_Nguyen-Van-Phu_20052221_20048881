@@ -237,3 +237,7 @@
 .img-fluid {
     margin: 0 auto;
 }
+
+.product-detail {
+    box-sizing: border-box;
+}
