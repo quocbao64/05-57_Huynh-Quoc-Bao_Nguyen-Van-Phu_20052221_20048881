@@ -158,7 +158,7 @@ if (window.location.href.indexOf("store.html") !== -1) {
 }
 
 const searchBar = id("search-bar");
-searchBar.addEventListener("input", function (e) {
+searchBar.addEventListener("blur", function (e) {
     const items = products.filter((e) =>
         e.title.toLowerCase().includes(searchBar.value.toLowerCase())
     );
