@@ -44,7 +44,9 @@ const cartProducts = id("cart-products");
 
 const renderProduct = () => {
     if (!sessionStorage.getItem("phone")) {
-        window.location.replace("../html/login.html");
+        window.location.replace(
+            "../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/html/login.html"
+        );
         return false;
     }
     const cartItem = findOccurrences(JSON.parse(localStorage.getItem("cart")));

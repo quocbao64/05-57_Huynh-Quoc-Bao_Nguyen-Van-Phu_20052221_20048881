@@ -89,7 +89,7 @@ window.renderProducts = (productID) => {
         <div class="shop-product" >
             <a onclick="return saveIndex(${
                 e.id
-            })" href="../html/article-detail.html" >
+            })" href="../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/html/article-detail.html" >
                 <div class="shop-product__img-wrapper">
                     <img src="${e.image[0]}" alt="" />
                 </div>
@@ -170,7 +170,7 @@ searchBar.addEventListener("blur", function (e) {
         <div class="shop-product" >
             <a onclick="return saveIndex(${
                 e.id
-            })" href="../html/article-detail.html" >
+            })" href="../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/html/article-detail.html" >
                 <div class="shop-product__img-wrapper">
                     <img src="${e.image[0]}" alt="" />
                 </div>

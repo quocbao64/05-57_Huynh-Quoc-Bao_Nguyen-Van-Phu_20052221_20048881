@@ -49,7 +49,9 @@ const validate = (e) => {
             handleError(password, 1, "", "green");
         }
         sessionStorage.setItem("phone", phone.value);
-        window.location.replace("/index.html");
+        window.location.replace(
+            "../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/index.html"
+        );
     }
 };
 
