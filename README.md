@@ -4,5 +4,3 @@ Mã đề tài: 05
 | :--:   | :--: | :----: |
 | 05 | 20052221 | Huỳnh Quốc Bảo |
 | 57 | 20048881 | Nguyễn Văn Phú |
-<br/>
-Deployment bằng AWS Amplify: https://master.d1jxnqyyjmv8ic.amplifyapp.com/
