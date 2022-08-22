@@ -36,19 +36,10 @@
         />
         <script src="../assets/toastr/toastr.min.js"></script>
 
-        <link
-            rel="stylesheet"
-            href="../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/css/index.css"
-        />
-        <link
-            rel="stylesheet"
-            href="../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/css/article-detail.css"
-        />
+        <link rel="stylesheet" href="../css/index.css" />
+        <link rel="stylesheet" href="../css/article-detail.css" />
 
-        <script
-            type="module"
-            src="../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/js/article-detail.js"
-        ></script>
+        <script type="module" src="../js/article-detail.js"></script>
 
         <script>
             $(function () {
@@ -236,9 +227,7 @@
                         >
                             Hủy
                         </button>
-                        <a
-                            href="../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/html/login.html"
-                        >
+                        <a href="../html/login.html">
                             <button type="button" class="btn btn-primary">
                                 Đăng nhập
                             </button></a
@@ -251,18 +240,22 @@
 
         <script>
             $(document).ready(function () {
-                var quantitiy = 0;
-                $(".quantity-right-plus").click(function (e) {
-                    e.preventDefault();
-                    var quantity = parseInt($("#quantity").val());
-                    $("#quantity").val(quantity + 1);
+                $(".quantity-right-plus").on("click", function () {
+                    var $qty = $(this)
+                        .closest(".detail-content__add-cart > div")
+                        .find("#quantity");
+                    var currentVal = parseInt($qty.val());
+                    if (!isNaN(currentVal)) {
+                        $qty.val(currentVal + 1);
+                    }
                 });
-
-                $(".quantity-left-minus").click(function (e) {
-                    e.preventDefault();
-                    var quantity = parseInt($("#quantity").val());
-                    if (quantity > 0) {
-                        $("#quantity").val(quantity - 1);
+                $(".quantity-left-minus").on("click", function () {
+                    var $qty = $(this)
+                        .closest(".detail-content__add-cart > div")
+                        .find("#quantity");
+                    var currentVal = parseInt($qty.val());
+                    if (!isNaN(currentVal) && currentVal > 1) {
+                        $qty.val(currentVal - 1);
                     }
                 });
             });
@@ -330,3 +323,21 @@
         </script>
     </body>
 </html>
+<script>
+    $(document).ready(function () {
+        var quantitiy = 0;
+        $(".quantity-right-plus").click(function (e) {
+            e.preventDefault();
+            var quantity = parseInt($("#quantity").val());
+            $("#quantity").val(quantity + 1);
+        });
+
+        $(".quantity-left-minus").click(function (e) {
+            e.preventDefault();
+            var quantity = parseInt($("#quantity").val());
+            if (quantity > 0) {
+                $("#quantity").val(quantity - 1);
+            }
+        });
+    });
+</script>

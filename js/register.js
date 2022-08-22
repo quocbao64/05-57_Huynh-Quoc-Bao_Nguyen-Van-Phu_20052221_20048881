@@ -61,7 +61,7 @@ const validate = (e) => {
         localStorage.setItem("phone", phone.value);
         localStorage.setItem("password", password.value);
         window.location.replace(
-            "../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/html/login.html"
+            "../html/login.html"
         );
     }
 };

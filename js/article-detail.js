@@ -113,7 +113,7 @@ hotProducts.innerHTML = product1
         <div class="shop-product">
             <a onclick="return saveIndex(${
                 e.id
-            })" href="../../05-57_Huynh-Quoc-Bao_Nguyen-Van-Phu_20052221_20048881/html/article-detail.html" >
+            })" href="../html/article-detail.html" >
                 <div class="shop-product__img-wrapper">
                     <img src="${e.image[0]}" alt="" />
                 </div>
